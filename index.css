@@ -1,0 +1,29 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.start-button {
+  
+}
+
+.board-grid {
+  display: grid;
+  grid-template: repeat(3, 50px) / repeat(3, 50px);
+  background-color: red;
+
+}
+
+.cube {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: solid black;
+}
+
+.cube:hover {
+  background-color: green;
+  cursor: pointer;
+}
