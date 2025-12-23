@@ -5,25 +5,46 @@
   height: 100vh;
 }
 
-.start-button {
-  
+.form-container{
+  display: flex;
+  flex-direction: row;
+  gap: 100px;
 }
+
+
+
+.form-container > :nth-child(-n+2){
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.submit-container{
+  display: flex;
+  justify-content: center;
+}
+
+
+.start-button {}
 
 .board-grid {
   display: grid;
-  grid-template: repeat(3, 50px) / repeat(3, 50px);
+  grid-template: repeat(3, 150px) / repeat(3, 150px);
   background-color: red;
 
 }
 
-.cube {
+.cell {
   display: flex;
   justify-content: center;
   align-items: center;
   border: solid black;
+  font-size: 10em;
 }
 
-.cube:hover {
+.cell:hover {
   background-color: green;
   cursor: pointer;
 }
