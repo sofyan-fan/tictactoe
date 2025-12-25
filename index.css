@@ -3,17 +3,53 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
+  flex-direction: column;
+  gap: 30px;
 }
 
-.form-container{
+.form-container {
   display: flex;
   flex-direction: row;
   gap: 100px;
 }
 
+.play-ground {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 100px;
+}
 
+.control-btns-container{
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+}
 
-.form-container > :nth-child(-n+2){
+.player-cage-right{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.player-cage-left{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.arrow{
+  width: 30px;
+  height: auto;
+}
+
+.form-container>.form-right,
+.form-container>.form-left {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -21,13 +57,21 @@
   gap: 20px;
 }
 
-.submit-container{
+.versus {
+  display: flex;
+  align-items: center;
+}
+
+.submit-container {
   display: flex;
   justify-content: center;
 }
 
 
-.start-button {}
+.start-button {
+  
+
+}
 
 .board-grid {
   display: grid;
