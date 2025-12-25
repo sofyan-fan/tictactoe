@@ -50,6 +50,7 @@ function landingPage() {
 
 
   const form = document.querySelector(".my-form")
+  const announcement = document.querySelector(".announcement");
 
   // Saart game after submit
 
@@ -66,6 +67,7 @@ function landingPage() {
     const game = Gamecontrol(player1, player2);
 
     form.remove();
+    announcement.remove()
 
     createBoard(playerNameinput1, playerNameinput2);
     console.log(game.getPlayer());
@@ -137,6 +139,8 @@ function Gamecontrol(player1, player2) {
   ];
 
   function resetGame(cells) {
+
+
     // reset state
     currentPlayerIndex = 0;
     turns = 0;
@@ -151,6 +155,12 @@ function Gamecontrol(player1, player2) {
 
     playerLeftImg.src = "images/Ryu.gif";
     playerRightImg.src = "images/Ken.gif";
+
+    // reset announcement
+    const announcement = document.querySelector(".announcement");
+    if (announcement) {
+      announcement.innerHTML = "<h1>FIGHT!</h1>";
+    }
 
     // reset arrow
     const existingArrow = document.querySelector(".arrow");
@@ -236,12 +246,12 @@ function Gamecontrol(player1, player2) {
 
 
 
-      const animations = [
-        "images/Ryu-hadouken.gif", // Ryu wins
-        "images/Ken-shuryuken.gif", // Ken wins
-        "images/Ryu-dizzy.gif", // Ryu loses
-        "images/Ken-dizzy.gif" // Ken loses
-      ];
+    const animations = [
+      "images/Ryu-hadouken.gif", // Ryu wins
+      "images/Ken-shuryuken.gif", // Ken wins
+      "images/Ryu-dizzy.gif", // Ryu loses
+      "images/Ken-dizzy.gif" // Ken loses
+    ];
 
 
     if (currentPlayerIndex === 0) { // Player 1 wins
@@ -313,7 +323,6 @@ function Gamecontrol(player1, player2) {
     getTurns,
     isGameOver,
     resetGame,
-
   }
 }
 
@@ -328,7 +337,7 @@ function createBoard(name1, name2) {
   const announcement = createEl("div", "announcement");
   const controlBtns = createEl("div", "control-btns-container");
   const grid = createEl("div", "board-grid");
-  const newGame = createEl("button", "control-btns start-button ", "NEW GAME");
+  const newGame = createEl("button", "control-btns start-button ", "NEW");
   const resetBtn = createEl("button", "control-btns reset-button", "RESET");
   const playGround = createEl("div", "play-ground");
   const playerCageLeft = createEl("div", "player-cage-left");
@@ -339,7 +348,7 @@ function createBoard(name1, name2) {
   const playerOneName = createEl("div", "", name1);
   const playerTwoName = createEl("div", "", name2);
   const selectionArrow = createEl("img", "arrow");
-  
+
   announcement.innerHTML = "<h1>FIGHT!</h1>";
 
 
